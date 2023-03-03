@@ -1,0 +1,25 @@
+// Custom Load Screen 
+loadScreen = "img\intro.paa";
+
+// Custom Music
+class CfgMusic
+{
+	tracks[] = {};
+	class mission_intro
+	{	
+		name = "Mission Intro";
+		sound[] = { "\audio\Intro.ogg", db + 0, 1.0 };
+	};
+	class mission_brief
+	{	
+		name = "Mission Brief";
+		sound[] = { "\audio\Brief.ogg", db + 0, 1.0 };
+	};
+	class mission_land
+	{	
+		name = "Mission Landing";
+		sound[] = { "\audio\Land.ogg", db + 0, 1.0 };
+	};
+};
+
+#include "mission_params.hpp"
