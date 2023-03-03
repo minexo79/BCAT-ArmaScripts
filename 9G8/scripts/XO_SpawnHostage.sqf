@@ -9,7 +9,8 @@ params [
 hostageUnit = ["C_Man_Casual_7_F", "C_Man_Casual_8_F", "C_Man_Casual_9_F"];
 grp = createGroup _side;
 
-for "_i" from 0 to _hostage_count - 1 do {
+for "_i" from 0 to _hostage_count - 1 do 
+{
 	_rp = selectRandom _hostage_point;
 	_rh = selectRandom hostageUnit;
 
@@ -22,10 +23,12 @@ for "_i" from 0 to _hostage_count - 1 do {
 {
     [_x, true] call ace_captives_fnc_setHandcuffed;
 
-    _x addEventHandler ["Killed", {
-		hostage_count = hostage_count - 1;
+    _x addEventHandler ["Killed", 
+	{
+		_hcount = { alive _x } count hostage;
 
-		if (hostage_count == 0) then {
+		if (_hcount == 0) then 
+		{
 			["task12" , "FAILED" , true] call BIS_fnc_taskSetState;
 			sleep 1;
 			["LOSER", false, true] call BIS_fnc_endMission;

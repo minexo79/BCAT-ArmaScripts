@@ -22,7 +22,23 @@ while {_time > 0 && bomb_unlock == false} do {
 	if (_time == _reinfo_time && task12 == false) then 
 	{
 		ula sideChat "單位注意！敵方派出增援部隊，加快腳步行動吧！";
-		["mehv1", "mehv11", opfor_preset_big, "O_Heli_Light_02_unarmed_F"] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+		// 根據遊戲難度調整增援方式
+		[switch ("mission_difficulty" call BIS_fnc_getParamValue) do
+		{
+			// normal mode 
+			case 2:	
+			{
+				["meha1", "meha99", opfor_preset_mid] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+				["meha2", "meha99", opfor_preset_mid] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+			};
+			// hard mode 
+			case 3:
+			{
+				["mehv1", "mehv11", opfor_preset_air_reinfocement, opfor_reinfocement_air_vehicle] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+				["meha11", "meha99", opfor_preset_mid, opfor_reinfocement_ground_vehicle] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+				["meha21", "meha99", opfor_preset_mid, opfor_reinfocement_ground_vehicle] execVM "scripts\peckcat\PCAT_infReinforcement.sqf";
+			};
+		}];
 	}
 };
 
