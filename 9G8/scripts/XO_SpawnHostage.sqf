@@ -6,6 +6,9 @@ params [
 	"_side"
 ];
 
+"hostageUnit";
+"grp";
+
 hostageUnit = ["C_Man_Casual_7_F", "C_Man_Casual_8_F", "C_Man_Casual_9_F"];
 grp = createGroup _side;
 
@@ -14,9 +17,9 @@ for "_i" from 0 to _hostage_count - 1 do
 	_rp = selectRandom _hostage_point;
 	_rh = selectRandom hostageUnit;
 
-	hap = grp createUnit [_rh, getMarkerPos _rp, [], 0, "NONE"];
+	_hap = grp createUnit [_rh, getMarkerPos _rp, [], 0, "NONE"];
 
-	hostage pushBack hap;
+	hostage pushBack _hap;
 };
 
 // Set Hostage To Handcuff And Set Event Handler

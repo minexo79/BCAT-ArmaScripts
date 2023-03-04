@@ -1,4 +1,4 @@
-execVM "intro.sqf";
+// execVM "intro.sqf";
 
 /// ====================================
 /// player script area

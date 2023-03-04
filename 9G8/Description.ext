@@ -1,5 +1,6 @@
 // Custom Load Screen 
 loadScreen = "img\intro.paa";
+enableDebugConsole = 1;
 
 // Custom Music
 class CfgMusic

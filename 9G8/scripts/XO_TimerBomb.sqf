@@ -19,7 +19,7 @@ while {_time > 0 && bomb_unlock == false} do {
 	hint format ["剩餘時間：%1", [(_time / 60) + .01, "HH:MM"] call BIS_fnc_timetostring];
 	sleep 1;
 
-	if (_time == _reinfo_time && task12 == false) then 
+	if (_time == _reinfo_time && task92 == false) then 
 	{
 		ula sideChat "單位注意！敵方派出增援部隊，加快腳步行動吧！";
 		// 根據遊戲難度調整增援方式
@@ -44,7 +44,6 @@ while {_time > 0 && bomb_unlock == false} do {
 
 // Time Out! Kill The Bomb
 if (bomb_unlock == false) then {
-	bomb_timeout = true;
 	bomb setDamage 1;
 
 	["task11" , "FAILED" , true] call BIS_fnc_taskSetState;

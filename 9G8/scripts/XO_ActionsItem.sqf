@@ -8,7 +8,7 @@ bomb addAction
 		sleep 1;
 		playSound "watchBeep_off";
 		bomb_unlock = true;
-		task11 = true;
+		task92 = true;
 		["task11" , "SUCCEEDED" , true] call BIS_fnc_taskSetState;
 
 		ula sideChat "漂亮，炸藥拆除之後，敵人就沒有自毀的餘地了。";

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=76;
+		nextID=91;
 	};
 	class Camera
 	{
-		pos[]={1076.7625,85.56044,4073.7991};
-		dir[]={0.61582983,-0.46703759,-0.63453108};
-		up[]={0.32526973,0.88423747,-0.33514735};
-		aside[]={-0.71760261,1.4901161e-008,-0.69645298};
+		pos[]={1236.6339,37.838615,6566.0972};
+		dir[]={0.17862882,-0.40623862,0.89614815};
+		up[]={0.079413667,0.91376472,0.39840516};
+		aside[]={0.98071569,-4.1851308e-008,-0.1954862};
 	};
 };
 binarizationWanted=0;
@@ -419,19 +419,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					singleType="SCALAR";
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -459,6 +446,19 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=0;
 				};
 			};
 		};
@@ -16514,7 +16514,7 @@ class Mission
 			class Attributes
 			{
 				name="opfor_trigger";
-				onActivation="ula SideChat ""完美，這種欺騙著國人來去為了一己私利的壞蛋，絕對不能留下任何活口。"";" \n "task12 = true;";
+				onActivation="ula SideChat ""完美，這種欺騙著國人來去為了一己私利的壞蛋，絕對不能留下任何活口。"";" \n "task93 = true;";
 				sizeA=250;
 				sizeB=250;
 				timeout[]={0,10,0};
@@ -17148,11 +17148,11 @@ class Mission
 		class Item41
 		{
 			dataType="Trigger";
-			position[]={3316.5969,30.22909,7121.4136};
+			position[]={3316.5969,30.229095,7121.4141};
 			class Attributes
 			{
 				condition="({_x inArea fob_trigger} count hostage) >= 1";
-				onActivation="task1 = true;";
+				onActivation="task91 = true;";
 				sizeA=0;
 				sizeB=0;
 			};
@@ -18066,11 +18066,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1085.653,72.289001,4039.8879};
-			angle=0.68240601;
+			angle=0.68240613;
 			class Attributes
 			{
 				name="fob_trigger";
-				condition="task1 == true && task11 == true";
+				condition="(task91 == true) && (task92 == true)";
 				onActivation="[""END1"", true, true] call BIS_fnc_endMission;";
 				sizeA=15;
 				sizeB=15;
@@ -21966,7 +21966,7 @@ class Mission
 			position[]={2402,29.047153,6259};
 			name="meha11";
 			type="Empty";
-			angle=16.737669;
+			angle=16.737667;
 			id=2554;
 		};
 		class Item91
@@ -21975,7 +21975,7 @@ class Mission
 			position[]={3931,22.281345,7711};
 			name="meha21";
 			type="Empty";
-			angle=184.87132;
+			angle=184.87129;
 			id=2555;
 		};
 	};

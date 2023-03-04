@@ -1,4 +1,22 @@
 /// ====================================
+/// global variable area
+/// ====================================
+
+publicVariable "hostage";
+publicVariable "bomb_unlock";
+publicVariable "task91";
+publicVariable "task92";
+publicVariable "task93";
+
+hostage = [];
+
+bomb_unlock = false;
+
+task91 = false;			// Hostage Mission
+task92 = false;			// Bomb Mission 
+task93 = false;			// Enemy Mission
+
+/// ====================================
 /// mission script area
 /// ====================================
 
@@ -10,9 +28,6 @@ systemChat "XO > 軍火庫生成中...";
 [arsenalbox, XO_arsenal_present] call ace_arsenal_fnc_initBox;
 
 systemChat "XO > 人質生成中...";
-
-hostage = [];
-publicVariable "hostage";
 hostage_count = "hostage_count" call BIS_fnc_getParamValue;
 hostage_point = ["mh1", "mh2", "mh3", "mh4", "mh5", "mh6", "mh7", "mh8", "mh9", "mh10", "mh11", "mh12", "mh13", "mh14", "mh15"];
 
